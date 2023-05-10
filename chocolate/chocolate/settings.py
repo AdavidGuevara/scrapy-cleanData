@@ -89,8 +89,8 @@ ROBOTSTXT_OBEY = True
 
 # Set settings whose default value is deprecated to a future-proof value
 FEEDS = {
-    "data/products.csv": {
-        "format": "csv",
+    "data/products.json": {
+        "format": "json",
     }
 }
 REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"

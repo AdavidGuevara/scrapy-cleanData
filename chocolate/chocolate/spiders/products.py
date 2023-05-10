@@ -1,3 +1,4 @@
+from ..itemsloaders import ChocolateProductLoader
 from ..items import ChocolateItem
 import scrapy
 
@@ -10,21 +11,12 @@ class ProductsSpider(scrapy.Spider):
     def parse(self, response):
         items = response.css("product-item")
 
-        product = ChocolateItem()
         for item in items:
-            product["nombre"] = item.css("a.product-item-meta__title::text").get()
-            product["precio"] = (
-                item.css("span.price")
-                .get()
-                .replace('<span class="price">\n', "")
-                .replace('              <span class="visually-hidden">Sale price', "")
-                .replace("</span>", "")
-                .replace('<span class="price price--highlight">\n', "")
-                .replace("\n", "")
-                .replace("From ", "")
-            )
-            product["url"] = item.css("div.product-item-meta a").attrib["href"]
-            yield {"nombre": product["nombre"], "precio": product["precio"]}
+            chocolate = ChocolateProductLoader(item=ChocolateItem(), selector=item)
+            chocolate.add_css("nombre", "a.product-item-meta__title::text")
+            chocolate.add_css("precio", "span.price")
+            chocolate.add_css("url", "div.product-item-meta a::attr(href)")
+            yield chocolate.load_item()
 
         next_page = response.css("[rel='next'] ::attr(href)").get()
         if next_page is not None:
