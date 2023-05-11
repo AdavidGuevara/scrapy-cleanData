@@ -1,4 +1,4 @@
 # Limpiando la data extraida con scrapy.
 
-- Se usa algunas funciones de forma directa en la carga de items em el spider.
 - Se usa itemsloader para completar la limpieza de los datos.
+- Se los pipelines para guardar los datos en MySQL ademas de incorporar mas metodos para la limpieza de los datos, como eliminar duplicados.
