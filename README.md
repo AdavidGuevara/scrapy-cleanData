@@ -1,4 +1,4 @@
-# Limpiando la data extraida con scrapy.
+# Cleaning the extracted data with scrapy.
 
-- Se usa algunas funciones de forma directa en la carga de items em el spider.
-- Se usa itemsloader para completar la limpieza de los datos.
+- Some functions are used directly in the loading of items in the spider.
+- Itemsloader is used to complete data cleanup.
