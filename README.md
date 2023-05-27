@@ -1,3 +1,3 @@
-# Limpiando la data extraida con scrapy.
+# Cleaning the extracted data with scrapy.
 
-- Se usa algunas funciones de forma directa en la carga de items em el spider. 
+- Some functions are used directly in loading items in the spider.
