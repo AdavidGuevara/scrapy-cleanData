@@ -1,4 +1,4 @@
-# Limpiando la data extraida con scrapy.
+# Cleaning the extracted data with scrapy.
 
-- Se usa itemsloader para completar la limpieza de los datos.
-- Se los pipelines para guardar los datos en MySQL ademas de incorporar mas metodos para la limpieza de los datos, como eliminar duplicados.
+- Itemsloader is used to complete data cleanup.
+- I know the pipelines to save the data in MySQL in addition to incorporating more methods for cleaning the data, such as eliminating duplicates.
